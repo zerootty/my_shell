@@ -1,0 +1,1 @@
+curl -s "http://qconlondon.com/london-2014/schedule/{wednesday,thursday,friday}.jsp" | awk -vFS='"'  '/Download/{print "http://qconlondon.com/"$2}' | xargs -P 10 -n 1 wget 
